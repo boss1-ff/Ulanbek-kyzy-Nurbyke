@@ -1,0 +1,894 @@
+```html
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Нурбийке эжейге ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fffaf3;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* =========================
+   ПАДАЮЩИЕ ЛЕПЕСТКИ
+========================= */
+
+.petal {
+    position: fixed;
+    top: -30px;
+    font-size: 20px;
+    animation: fall linear infinite;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   ПЕРВЫЙ ЭКРАН
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    background:
+        linear-gradient(rgba(255, 248, 231, 0.86),
+        rgba(255, 239, 213, 0.92)),
+        radial-gradient(circle at top, #ffd98a, transparent 50%);
+    position: relative;
+}
+
+.hero-content {
+    max-width: 850px;
+    animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.school {
+    font-size: 18px;
+    color: #9b6b24;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 8vw, 80px);
+    color: #8b541c;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: clamp(22px, 4vw, 36px);
+    color: #b66d25;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #594936;
+}
+
+.open-btn {
+    margin-top: 35px;
+    padding: 16px 35px;
+    border: none;
+    border-radius: 50px;
+    background: #b8792e;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(150, 90, 20, 0.25);
+}
+
+.open-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    background: #925d20;
+}
+
+/* =========================
+   ОБЩИЕ СЕКЦИИ
+========================= */
+
+section {
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 38px;
+    color: #8b541c;
+    margin-bottom: 45px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #725d48;
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   ПОЗДРАВЛЕНИЕ
+========================= */
+
+.greeting {
+    background: #fff;
+}
+
+.letter {
+    background: white;
+    border: 2px solid #efd9ae;
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(100, 70, 30, 0.08);
+    line-height: 1.9;
+    font-size: 18px;
+}
+
+.letter strong {
+    color: #a86320;
+}
+
+/* =========================
+   ФОТО
+========================= */
+
+.photos {
+    background: #fff5e5;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.photo {
+    height: 300px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #ead8b9;
+    border: 4px solid white;
+    box-shadow: 0 10px 30px rgba(80, 50, 20, 0.15);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.photo:hover img {
+    transform: scale(1.08);
+}
+
+/* =========================
+   БУКЕТ
+========================= */
+
+.bouquet-section {
+    background: white;
+    text-align: center;
+}
+
+.bouquet {
+    font-size: 100px;
+    margin: 20px;
+    animation: flower 2s infinite ease-in-out;
+}
+
+@keyframes flower {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.bouquet-text {
+    max-width: 650px;
+    margin: auto;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* =========================
+   ПОЖЕЛАНИЯ
+========================= */
+
+.wishes {
+    background: #fff5e5;
+}
+
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.wish {
+    background: white;
+    padding: 30px;
+    border-radius: 22px;
+    border-top: 5px solid #c58a3d;
+    box-shadow: 0 10px 25px rgba(80, 50, 20, 0.08);
+    transition: 0.3s;
+}
+
+.wish:hover {
+    transform: translateY(-7px);
+}
+
+.wish-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.wish h3 {
+    color: #8b541c;
+    margin-bottom: 12px;
+}
+
+.wish p {
+    line-height: 1.7;
+}
+
+/* =========================
+   СЕКРЕТ
+========================= */
+
+.secret {
+    background: linear-gradient(135deg, #8b541c, #c58a3d);
+    color: white;
+    text-align: center;
+}
+
+.secret .title {
+    color: white;
+}
+
+.secret-btn {
+    padding: 17px 35px;
+    border: 2px solid white;
+    border-radius: 50px;
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.secret-btn:hover {
+    background: white;
+    color: #8b541c;
+}
+
+.secret-message {
+    max-width: 750px;
+    margin: 30px auto 0;
+    padding: 30px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 20px;
+    font-size: 21px;
+    line-height: 1.8;
+    display: none;
+}
+
+.secret-message.show {
+    display: block;
+    animation: appear 0.8s ease;
+}
+
+/* =========================
+   ФИНАЛ
+========================= */
+
+.final {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at center, #ffe5aa, #fffaf3);
+}
+
+.final-content {
+    max-width: 850px;
+}
+
+.final h2 {
+    font-size: clamp(35px, 7vw, 65px);
+    color: #8b541c;
+    margin-bottom: 25px;
+}
+
+.final p {
+    font-size: 22px;
+    line-height: 1.8;
+    color: #624c32;
+}
+
+.signature {
+    margin-top: 35px;
+    font-size: 24px;
+    color: #a86320;
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #49351f;
+    color: #f8e8cb;
+    text-align: center;
+    padding: 30px;
+}
+
+/* =========================
+   АДАПТАЦИЯ
+========================= */
+
+@media (max-width: 800px) {
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wishes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo {
+        height: 350px;
+    }
+
+    .letter {
+        padding: 25px;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .hero {
+        padding: 20px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .photo {
+        height: 300px;
+    }
+
+    .bouquet {
+        font-size: 75px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     ЛЕПЕСТКИ
+========================= -->
+
+<div class="petal" style="left:5%; animation-duration:8s;">🌸</div>
+<div class="petal" style="left:15%; animation-duration:11s;">🌷</div>
+<div class="petal" style="left:30%; animation-duration:9s;">🌸</div>
+<div class="petal" style="left:48%; animation-duration:13s;">🌼</div>
+<div class="petal" style="left:65%; animation-duration:10s;">🌸</div>
+<div class="petal" style="left:80%; animation-duration:12s;">🌷</div>
+<div class="petal" style="left:93%; animation-duration:9s;">🌸</div>
+
+
+<!-- =========================
+     ГЛАВНЫЙ ЭКРАН
+========================= -->
+
+<header class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="school">
+            🌷 9-Д КЛАСС 🌷
+        </div>
+
+        <h1>Урматтуу<br>Нурбийке эжей!</h1>
+
+        <h2>Мугалимдер күнүңүз менен! ❤️</h2>
+
+        <p>
+            Сизге арналган кичинекей,
+            бирок жүрөктөн чыккан өзгөчө белек.
+        </p>
+
+        <button class="open-btn"
+                onclick="document.getElementById('gift').scrollIntoView()">
+            🎁 Белекти ачуу
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     ПИСЬМО
+========================= -->
+
+<section class="greeting" id="gift">
+
+    <div class="container">
+
+        <h2 class="title">
+            💌 Сизге арналган кат
+        </h2>
+
+        <div class="letter">
+
+            <p>
+                <strong>Урматтуу Нурбийке эжей!</strong>
+            </p>
+
+            <br>
+
+            <p>
+                Сизди кесиптик майрамыңыз —
+                <strong>Мугалимдер күнү</strong> менен
+                чын жүрөктөн куттуктайбыз!
+            </p>
+
+            <br>
+
+            <p>
+                Сиз бизге кыргыз тилин жана кыргыз адабиятын
+                үйрөтүп гана тим болбостон, билим алууга,
+                изденүүгө жана жакшы адам болууга багыт берип келесиз.
+            </p>
+
+            <br>
+
+            <p>
+                Ар бир сабагыңыз биз үчүн өзгөчө.
+                Сиздин мээримиңиз, сабырдуулугуңуз жана
+                бизге болгон ишенимиңиз үчүн чоң рахмат!
+            </p>
+
+            <br>
+
+            <p>
+                Ар дайым ден соолугуңуз чың,
+                көңүлүңүз жарык, жашооңуз кубанычка толсун.
+                Ар бир окуучуңуздун ийгилиги сизге сыймык болсун!
+            </p>
+
+            <br>
+
+            <p>
+                <strong>
+                    Сизге чексиз ыраазычылык менен —
+                    9-Д классы ❤️
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ФОТО
+========================= -->
+
+<section class="photos">
+
+    <div class="container">
+
+        <h2 class="title">
+            📸 Эсте каларлык көз ирмемдер
+        </h2>
+
+        <p class="subtitle">
+            Бул жерге эжейиңиздин жана класстын сүрөттөрүн кошсоңуз болот.
+        </p>
+
+        <div class="photo-grid">
+
+            <!--
+            СҮРӨТ КОШУУ:
+
+            1. Папкага 1.jpg, 2.jpg, 3.jpg деген сүрөттөрдү салыңыз.
+            2. Төмөнкү src аттарын өзгөртпөй эле койсоңуз болот.
+            -->
+
+            <div class="photo">
+                <img src="1.jpg" alt="Нурбийке эжей">
+            </div>
+
+            <div class="photo">
+                <img src="2.jpg" alt="9-Д классы">
+            </div>
+
+            <div class="photo">
+                <img src="3.jpg" alt="Класстын көз ирмеми">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ВИРТУАЛДЫК БУКЕТ
+========================= -->
+
+<section class="bouquet-section">
+
+    <div class="container">
+
+        <h2 class="title">
+            💐 Сизге виртуалдык гүлдесте
+        </h2>
+
+        <div class="bouquet">
+            💐🌷🌹🌸🌺
+        </div>
+
+        <div class="bouquet-text">
+
+            <p>
+                Бул гүлдөрдүн ар бири сизге болгон
+                ыраазычылыгыбыздын бир бөлүгү. 🌷
+            </p>
+
+            <br>
+
+            <p>
+                Сизге ар дайым бакыт, ден соолук,
+                чыгармачылык ийгилик жана
+                көптөгөн кубанычтуу күндөрдү каалайбыз!
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ОКУУЧУЛАРДЫН ПОЖЕЛАНИЯ
+========================= -->
+
+<section class="wishes">
+
+    <div class="container">
+
+        <h2 class="title">
+            ❤️ Окуучулардан жылуу каалоолор
+        </h2>
+
+        <div class="wishes-grid">
+
+            <div class="wish">
+
+                <div class="wish-icon">🌷</div>
+
+                <h3>Калмаматова Альбинадан сизге кат </h3>
+
+                <p>
+                    Нурбийке эжей, сизге бекем ден соолук,
+                    үй-бүлөлүк бакыт жана ишиңизге чоң ийгиликтерди каалайм!
+                </p>
+
+            </div>
+
+
+            <div class="wish">
+
+                <div class="wish-icon">🌸</div>
+
+                <h3>Сагыналиев Жумакадырдан сизге кат </h3>
+
+                <p>
+                    Ар дайым ушундай мээримдүү жана
+                    жылмайып жүргөн эжей бойдон калыңыз.
+                    Майрамыңыз менен!
+                </p>
+
+            </div>
+
+
+            <div class="wish">
+
+                <div class="wish-icon">🌹</div>
+
+                <h3>Хакимжанова Айзиректен сизге кат </h3>
+
+                <p>
+                    Ар бир эмгегиңиз бааланып,
+                    окуучуларыңыздын ийгилиги сизге
+                    чоң кубаныч алып келсин!
+                </p>
+
+            </div>
+
+
+            <div class="wish">
+
+                <div class="wish-icon">🌺</div>
+
+                <h3>Исмаилов Хамзадан сизге кат</h3>
+
+                <p>
+                    Сизге узун өмүр, чың ден соолук
+                    жана ар дайым жакшы маанай каалайм!
+                    Майрамыңыз кут болсун!
+                    <br><br>
+                    Ар дайым жүзүңүздөн жылмаюу кетпей,
+                    эмгегиңиздин үзүрүн көрүп,
+                    окуучуларыңыздын сый-урматына бөлөнүп жүрө бериңиз.
+                    <br><br>
+                    
+                </p>
+
+            </div>
+<div class="wish">
+
+<div class="wish-icon">🌷</div>
+
+<h3>Калмуратова Аэлтадан сизге кат </h3>
+
+<p>
+    Ар дайым жүзүңүздөн жылмаюу кетпей,
+    эмгегиңиздин үзүрүн көрүп,
+    окуучуларыңыздын сый-урматына
+    бөлөнүп жүрө бериңиз. ❤️
+</p>
+
+</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     СЕКРЕТНЫЙ СЮРПРИЗ
+========================= -->
+
+<section class="secret">
+
+    <div class="container">
+
+        <h2 class="title">
+            🎁 Дагы бир кичинекей сюрприз...
+        </h2>
+
+        <button class="secret-btn" onclick="showSecret()">
+            ✨ Сюрпризди ачуу
+        </button>
+
+        <div class="secret-message" id="secretMessage">
+
+            <p>
+                Нурбийке эжей ❤️
+            </p>
+
+            <br>
+
+            <p>
+                Сиз биздин мектептеги жөн гана мугалим эмессиз.
+                Сиз — бизге билим берип, туура жол көрсөтүп,
+                ар дайым колдоп турган адамсыз.
+            </p>
+
+            <br>
+
+            <p>
+                Сизге бизден чоң рахмат! 🌷
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ФИНАЛ
+========================= -->
+
+<section class="final">
+
+    <div class="final-content">
+
+        <h2>
+            Нурбийке эжей,
+            майрамыңыз менен! ❤️
+        </h2>
+
+        <p>
+            Сиздин ар бир сабагыңыз,
+            ар бир кеңешиңиз жана
+            ар бир жылмаюуңуз биздин эсибизде калат.
+        </p>
+
+        <br>
+
+        <p>
+            Ар дайым бактылуу болуңуз!
+            Сизге чоң рахмат! 🌷
+        </p>
+
+        <div class="signature">
+            Урматтоо менен — 9-Д классы 💐
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        🌷 9-Д классы тарабынан даярдалды 🌷
+    </p>
+
+    <p style="margin-top:10px;">
+        Нурбийке эжейге арналат ❤️
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   СЕКРЕТТИН АЧЫЛЫШЫ
+========================= */
+
+function showSecret() {
+
+    const message = document.getElementById("secretMessage");
+
+    message.classList.toggle("show");
+
+}
+
+
+/* =========================
+   КОШУМЧА КОНФЕТТИ
+========================= */
+
+function createConfetti() {
+
+    const symbols = ["🌸", "🌷", "❤️", "✨", "🎉"];
+
+    for (let i = 0; i < 30; i++) {
+
+        const item = document.createElement("div");
+
+        item.style.position = "fixed";
+        item.style.left = Math.random() * 100 + "%";
+        item.style.top = "-30px";
+        item.style.fontSize = "20px";
+        item.style.zIndex = "2000";
+        item.style.pointerEvents = "none";
+        item.innerText =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        document.body.appendChild(item);
+
+        const duration = 2000 + Math.random() * 3000;
+
+        item.animate(
+            [
+                {
+                    transform: "translateY(0) rotate(0deg)",
+                    opacity: 1
+                },
+                {
+                    transform:
+                        `translateY(110vh) rotate(${Math.random() * 720}deg)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration: duration,
+                easing: "linear"
+            }
+        );
+
+        setTimeout(() => {
+            item.remove();
+        }, duration);
+    }
+}
+
+
+/* =========================
+   ПРАЗДНИЧНЫЙ ЭФФЕКТ
+========================= */
+
+setTimeout(() => {
+    createConfetti();
+}, 1200);
+
+</script>
+
+</body>
+</html>
+```
